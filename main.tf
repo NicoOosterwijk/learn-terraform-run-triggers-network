@@ -1,6 +1,11 @@
 provider "aws" {
-  version = "~> 2.7"
+  #version = "~> 2.7"
   region  = var.aws_region
+}
+
+required_providers "aws" {
+  version = "~> 2.7"
+  #region  = data.terraform_remote_state.network.outputs.aws_region
 }
 
 data "aws_availability_zones" "available" {
